@@ -1,0 +1,77 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#/home">Home</a>
+    </li>
+    <li class="active">Downlod</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap" id="export-div">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DATATABLE EXPORT -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Downlod Report</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id="customers2" class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Unique ID</th>
+                                    <th>Country</th>                                    
+                                    <th>Seriousness</th>
+                                    <th>Valid</th>
+                                    <th>LP name</th>
+                                    <th>Expedite</th>                                    
+                                    <th>Action</th>
+                                </tr>
+                            </thead>                                
+                            <tbody ng-repeat="flow in workflow.list"> 
+                                        <tr>
+                                            <td>{{flow.date}}</td>
+                                            <td>{{flow.uniq}}</td>
+                                            <td>{{flow.county}}</td>
+                                            <td>{{flow.seriousness}}</td>
+                                            <td>{{flow.lpname}}</td>
+                                            <td>{{flow.expedite}}</td>
+                                            <td>{{flow.liceance_partner}}</td>
+                                            <td><a href="#/flow/view/1" class="btn btn-info active">View</a></td>
+                                        </tr>                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END DATATABLE EXPORT -->
+        </div>
+    </div>
+
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<script>
+    $('a[href="#"]').click(function (e) {
+        e.preventDefault();
+    });
+
+    $("#export-div").find('#customers2').DataTable({
+        dom: 'Bfrtip',
+        buttons: [{
+                extend: 'excelHtml5',
+                title: 'workflow-excel-report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'workflow-pdf-report'
+            }            
+        ]
+    });
+
+    $("#export-div").find(".buttons-excel").addClass('btn').addClass('btn-primary');
+    $("#export-div").find(".buttons-pdf").addClass('btn').addClass('btn-info');
+</script>

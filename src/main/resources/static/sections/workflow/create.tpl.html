@@ -1,0 +1,597 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#/home">Home</a>
+    </li>
+    <li class="active">Assign new</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START TABS -->
+            <div class="panel panel-default tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li ng-class="workflow.tabin==1?'active':''" ng-click="workflow.tabin=1">
+                        <a href="#">Details</a>
+                    </li>
+                    <li ng-class="workflow.tabin==6?'active':''" ng-click="workflow.tabin=6">
+                        <a href="#">Assign</a>
+                    </li>
+                    <li ng-class="workflow.tabin==2?'active':''" ng-click="workflow.tabin=2">
+                        <a href="#">DC</a>
+                    </li>
+                    <li ng-class="workflow.tabin==3?'active':''" ng-click="workflow.tabin=3">
+                        <a href="#">QC</a>
+                    </li>
+                    <li ng-class="workflow.tabin==4?'active':''" ng-click="workflow.tabin=4">
+                        <a href="#">MR</a>
+                    </li>
+                    <li ng-class="workflow.tabin==5?'active':''" ng-click="workflow.tabin=5">
+                        <a href="#">Final submission</a>
+                    </li>
+                </ul>
+                <div class="panel-body tab-content">
+                    <div class="tab-pane active" ng-class="workflow.tabin==1?'active':''" id="tab-first" ng-show="workflow.tabin==1">
+                        <div class="panel-body">
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label class="control-label"> Local reference number </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="control-label"> Suspect drugs </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">Valid </label>
+                                        <div class="col-md-12">
+                                            <select class="form-control select" style="display: none;">
+                                                <option>Yes</option>
+                                                <option>NO</option>
+                                                <option>Potential</option>
+                                            </select>
+                                            <div class="btn-group bootstrap-select form-control select">
+                                                <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Option 1">
+                                                    <span class="filter-option pull-left">Option 1</span>&nbsp;
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <div class="dropdown-menu open">
+                                                    <ul class="dropdown-menu inner selectpicker" role="menu">
+                                                        <li rel="0" class="selected">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 1</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="1">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 2</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="2">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 3</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="3">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 4</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="4">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 5</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label"> Reason if non valid </label>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label"> Seriousness </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">Upload File</label>
+                                        <div class="col-md-12 col-xs-12">
+                                            <input type="file" class="fileinput btn-primary" name="filename" id="filename" title="Browse file">
+                                            <span class="help-block">Input type pdf</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label class="control-label"> Date (IRD)</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                                <input type="text" class="form-control datepicker" value="2014-11-01">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label"> Company received date</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                                <input type="text" class="form-control datepicker" value="2014-11-01">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="control-label"> Country</label>
+                                        <div class="col-md-12">
+                                            <select class="form-control select" style="display: none;">
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                            <div class="btn-group bootstrap-select form-control select">
+                                                <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Option 1">
+                                                    <span class="filter-option pull-left">Option 1</span>&nbsp;
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <div class="dropdown-menu open">
+                                                    <ul class="dropdown-menu inner selectpicker" role="menu">
+                                                        <li rel="0" class="selected">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 1</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="1">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 2</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="2">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 3</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="3">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 4</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="4">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 5</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label"> Submission countries</label>
+                                        <div class="col-md-12">
+                                            <select class="form-control select" style="display: none;">
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                            <div class="btn-group bootstrap-select form-control select">
+                                                <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Option 1">
+                                                    <span class="filter-option pull-left">Option 1</span>&nbsp;
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <div class="dropdown-menu open">
+                                                    <ul class="dropdown-menu inner selectpicker" role="menu">
+                                                        <li rel="0" class="selected">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 1</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="1">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 2</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="2">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 3</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="3">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 4</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li rel="4">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">Option 5</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label"> LP name if sharing </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label"> Expedite </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary pull-right">Save Changes
+                            <span class="fa fa-floppy-o fa-right"></span>
+                        </button>
+                    </div>
+                    <div class="tab-pane" id="tab-second" ng-class="workflow.tabin==2?'active':''" ng-show="workflow.tabin==2">
+
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <label class="control-label">World-wide unique ID</label>
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-pencil"></span>
+                                            </span>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">DE done date</label>
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </span>
+                                            <input type="text" class="form-control datepicker" value="2014-11-01">
+                                        </div>
+                                        <span class="help-block">Click on input field to get datepicker</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="control-label">Comment box</label>
+                                    <div class="col-md-12 col-xs-12">
+                                        <textarea class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="btn btn-primary pull-right">Save Changes
+                            <span class="fa fa-floppy-o fa-right"></span>
+                        </button>
+
+                    </div>
+                    <div class="tab-pane" id="tab-third" ng-class="workflow.tabin==3?'active':''" ng-show="workflow.tabin==3">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <label class="control-label">World-wide unique ID</label>
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-pencil"></span>
+                                            </span>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">QC done date</label>
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </span>
+                                            <input type="text" class="form-control datepicker" value="2014-11-01">
+                                        </div>
+                                        <span class="help-block">Click on input field to get datepicker</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="control-label">Comment box</label>
+                                    <div class="col-md-12 col-xs-12">
+                                        <textarea class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="btn btn-primary pull-right">Save Changes
+                            <span class="fa fa-floppy-o fa-right"></span>
+                        </button>
+                    </div>
+                    <div class="tab-pane" id="tab-fourth" ng-class="workflow.tabin==4?'active':''" ng-show="workflow.tabin==4">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <label class="control-label">World-wide unique ID</label>
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-pencil"></span>
+                                            </span>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">MR done date</label>
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </span>
+                                            <input type="text" class="form-control datepicker" value="2014-11-01">
+                                        </div>
+                                        <span class="help-block">Click on input field to get datepicker</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="control-label">Comment box</label>
+                                    <div class="col-md-12 col-xs-12">
+                                        <textarea class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary pull-right">Save Changes
+                            <span class="fa fa-floppy-o fa-right"></span>
+                        </button>
+                    </div>
+                    <div class="tab-pane" id="tab-fifth" ng-class="workflow.tabin==5?'active':''" ng-show="workflow.tabin==5">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <label class="control-label">World-wide unique ID</label>
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-pencil"></span>
+                                            </span>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="control-label"> Submission countries</label>
+                                    <div class="col-md-12">
+                                        <select class="form-control select" style="display: none;">
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                        <div class="btn-group bootstrap-select form-control select">
+                                            <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="Option 1">
+                                                <span class="filter-option pull-left">Option 1</span>&nbsp;
+                                                <span class="caret"></span>
+                                            </button>
+                                            <div class="dropdown-menu open">
+                                                <ul class="dropdown-menu inner selectpicker" role="menu">
+                                                    <li rel="0" class="selected">
+                                                        <a tabindex="0" class="" style="">
+                                                            <span class="text">Option 1</span>
+                                                            <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li rel="1">
+                                                        <a tabindex="0" class="" style="">
+                                                            <span class="text">Option 2</span>
+                                                            <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li rel="2">
+                                                        <a tabindex="0" class="" style="">
+                                                            <span class="text">Option 3</span>
+                                                            <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li rel="3">
+                                                        <a tabindex="0" class="" style="">
+                                                            <span class="text">Option 4</span>
+                                                            <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li rel="4">
+                                                        <a tabindex="0" class="" style="">
+                                                            <span class="text">Option 5</span>
+                                                            <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">Submission Date</label>
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </span>
+                                            <input type="text" class="form-control datepicker" value="2014-11-01">
+                                        </div>
+                                        <span class="help-block">Click on input field to get datepicker</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">Comment box</label>
+                                    <div class="col-md-12 col-xs-12">
+                                        <textarea class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary pull-right">Save Changes
+                            <span class="fa fa-floppy-o fa-right"></span>
+                        </button>
+                    </div>
+                    <div class="tab-pane" id="tab-six" ng-class="workflow.tabin==6?'active':''" ng-show="workflow.tabin==6">
+                        <div class="row">
+                            <div class="col-md-9">
+                                    <div class="form-group">
+                                            <label class="control-label">Select DE User</label>
+                                            <div class="col-md-12">                                        
+                                                <select class="form-control select">
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>                                                                                        
+                                                </select>
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label class="control-label">Select QC User</label>
+                                            <div class="col-md-12">                                        
+                                                <select class="form-control select">
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>                                                                                        
+                                                </select>
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label class="control-label">Select MR User</label>
+                                            <div class="col-md-12">                                        
+                                                <select class="form-control select">
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>                                                                                        
+                                                </select>
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label class="control-label">Select Final submission User</label>
+                                            <div class="col-md-12">                                        
+                                                <select class="form-control select">
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>                                                                                        
+                                                </select>
+                                            </div>
+                                    </div>
+                            </div>                            
+                        </div>
+                        <button class="btn btn-primary pull-right">Save Changes
+                                <span class="fa fa-floppy-o fa-right"></span>
+                            </button>
+                    </div>
+                </div>
+            </div>
+            <!-- END TABS -->
+        </div>
+     </div>
+    </div>
+    <!-- END PAGE CONTENT WRAPPER -->
+    <script>
+        $('a[href="#"]').click(function (e) {
+            e.preventDefault();
+        });
+    </script>
